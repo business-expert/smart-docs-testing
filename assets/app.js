@@ -17,7 +17,9 @@ var Toc = {
                 console.log( child);
                 var cob = {parent: $(child), children: []};
                 selected.children.push(cob);
-                recurseSelection(cob, selectors.slice(1));
+                if (selectors.length > 2) {
+                    recurseSelection(cob, selectors.slice(1));
+                }
             });
         }
 
